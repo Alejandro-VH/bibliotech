@@ -2,5 +2,5 @@
 2do taller de programacion avanzada
 
 # Integrantes:
-Alejandro Villarroel
+Alejandro Villarroel y
 Nicolas Galleguillos
