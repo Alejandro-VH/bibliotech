@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+skin rose
+
+Socio"*"---|>"1"Sistema:interactua
+Sistema"1"---|>"*"Libro:contiene:
+
+enum Libro{
+-ISBN
+-copiasDisponibles
+-Titulo
+-Autor
+-Categoria
+-calificacion
+-calificacionCantidad
+}
+
+enum Socio{
+-numeroSocio
+-numerosLibrosMaximos
+-contraseña
+-nombre
+-apellido
+-correoElectronico
+-LibrosEnPrestamo
+
+}
+
+enum Sistema{
+
+-PrestamoLibros
+-edicionInformacionSocio
+
+
+}
+
+
+@enduml

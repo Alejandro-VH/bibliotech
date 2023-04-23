@@ -1,0 +1,107 @@
+@startuml
+left to right direction
+skin rose
+
+Libro"*"---|>"1"Sistema
+Sistema"1"---|>"*"Libro
+Socio"*"---|>"1"Sistema
+Sistema"1"---|>"1"Utils
+Utils"1"---|>"1"Sistema
+enum Sistema{
+
+-socios: array
+-Libros: array
+
+}
+
+enum Libro{
+
+-ISBN: int
+-copiasDisponible: int
+-titulo: String
+-autor: String
+-categoria: String
+-calificacion: double
+-calificacionCantidad:int
+}
+
+enum Socio{
+-NUMEROS_LIBROS_MAXIMO:int
+-numeroAcceso: int
+-contraseniaa: String
+-nombre: String
+-apellido: String
+-correoElectronico: String
+-LibrosEnPrestamo: int
+
+}
+
+enum Utils{
+
++Email_PATTERN:Pattern
++PASSWORD_REGEX:String
++PASWORD_PATTERN:Pattern
+
+}
+
+Class Sistema{
+
++IniciarSesion(numeroDeSocio: int, contrasenia: String):void
++cerrarSesion():void
++realizarPrestamoLibre(isbn: String):void
++obtenerCatalogoLibros():String
+-buscarLibro(isbn: String):Libro
+-cargarInformacion():void
+-guardarInformacion():void
++obtenerDatosSocioLogeado():String
+
+
+
+}
+
+Class Libro{
+
++libro(isbn:String, titulo: String, autor:String, categoria:String)
++getIsbn():String
++getTitulo():String
++getAutor():String
++getCategoria():String
++getCopias():int
++getCalificacion():double
++sumarCalificacion(calificacion:float):void
++retirarLibro():void
+
+}
+
+Class Socio{
+
++socio(nombre: String, apellido:String, correoElectronico:String, numeroDeSocio:int, contrasenia:String)
++getnombre():String
++getApellido():String
++getNombreApellido():String
++getCorreoElectronico():String
++getNumeroDeSocio():int
++getContrasenia():String
++setContrasenia(contrasenia:String):void
++setCorreoElectronico(correoElectronico: String):void
++agregarLibro(final Libro libro):void
++quitarLibro(isbn: String):void
++sobreescribirCorreo(correo:String):void
++sobreescribirContrasenia(contrasenia:String):void
++actualizarCalificacion(isbn: String,calificacion:int):void
+
+}
+
+Class Utils{
+
++appendT(T[]: theStaticArray,T:theObject):Static
++validarEmail(email:String):static void
++validarNombre(nombre:Nombre):static void
++validarApellido(apellido:String):static void
++validarContrasenia(contrasenia:String):static void
++validarNumeroDeSocio(numSocio:int):static void
++contieneNumeros(string:String):static void
+
+}
+
+@enduml
